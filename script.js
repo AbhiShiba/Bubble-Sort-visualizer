@@ -20,6 +20,7 @@ let globalNumbers = []
             }
             return states
         }
+
         function htmlToElement(html) {
             var template = document.createElement('template');
             html = html.trim(); // Never return a text node of whitespace as the result
@@ -38,6 +39,7 @@ let globalNumbers = []
             main.innerHTML = ''
             main.appendChild(htmlToElement(createArrayMarkup(numbersArray)))
         }
+        
         function createArrayMarkup(array) {
             const els = array.map((num, idx) => `<div class="num num-${idx}" data-val="${num}" style="width:14px;height:${num * 16}px;order:${idx + 1}">${num}</div>`)
             els.push('</div>')
